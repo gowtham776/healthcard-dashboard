@@ -1,0 +1,116 @@
+.sidebar {
+  width: 220px;
+  background-color: #f6faff;
+  height: calc(100vh - 60px);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  text-transform: uppercase;
+}
+
+.tools-title {
+  margin-top: 48px; /* Increased gap between General and Tools for better separation */
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-footer {
+  margin-top: 96px; /* Fixed margin to keep Setting close to Tools */
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar-nav-item:hover {
+  background-color: #e0ecf9;
+}
+
+.sidebar-nav-item.active {
+  background-color: #e0ecf9;
+}
+
+.sidebar-icon {
+  margin-right: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-nav-item.active .sidebar-icon {
+  color: #2563eb;
+}
+
+.sidebar-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+
+  .sidebar {
+    width: 220px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: -220px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-content {
+    min-height: auto;
+  }
+
+  .tools-title {
+    margin-top: 72px; /* Slightly smaller gap on mobile, but still increased */
+  }
+
+  .sidebar-footer {
+    margin-top: 96px;
+  }
+}

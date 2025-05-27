@@ -1,0 +1,39 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f5f9; /* Matches the design's background */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px; /* Reduced from 20px to match design spacing */
+}
+
+/* Tablet view (stack layout) */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 12px; /* Adjusted for tablet view */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 8px; /* Reduced from 10px to match mobile design */
+  }
+}
